@@ -1,31 +1,58 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.11.35208.52
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.vcxproj", "{04A33B6A-F389-45A8-BB57-C42305383A01}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{04A33B6A-F389-45A8-BB57-C42305383A01}.Debug|x64.ActiveCfg = Debug|x64
-		{04A33B6A-F389-45A8-BB57-C42305383A01}.Debug|x64.Build.0 = Debug|x64
-		{04A33B6A-F389-45A8-BB57-C42305383A01}.Debug|x86.ActiveCfg = Debug|Win32
-		{04A33B6A-F389-45A8-BB57-C42305383A01}.Debug|x86.Build.0 = Debug|Win32
-		{04A33B6A-F389-45A8-BB57-C42305383A01}.Release|x64.ActiveCfg = Release|x64
-		{04A33B6A-F389-45A8-BB57-C42305383A01}.Release|x64.Build.0 = Release|x64
-		{04A33B6A-F389-45A8-BB57-C42305383A01}.Release|x86.ActiveCfg = Release|Win32
-		{04A33B6A-F389-45A8-BB57-C42305383A01}.Release|x86.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DD33304D-5ADF-45E1-8140-E1FAE1F815EF}
-	EndGlobalSection
-EndGlobal
+// ConsoleApplication1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+//
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    cout << "введите x";
+    int x;
+    cout << "введите y";
+    int y;
+    cout << "введите a";
+    int a;
+    cout << "введите b";
+    int b;
+    double z;
+
+    cin >> x;
+    cin >> y;
+    cin >> a;
+    cin >> b;
+
+    
+
+    if (x < y)
+    {
+        double minEl = a - cos(x);
+        if (a / (b + y) < minEl)
+        {
+            minEl = a / (b + y);
+        }
+        if (pow(sin(y), 2) < minEl)
+        {
+            minEl = pow(sin(y), 2);
+        }
+        z = minEl;
+        cout << z;
+    }
+    else if (y <= x && x < y + 5)
+    {
+        double maxEl = pow(a, 3);
+
+        if (maxEl < log(pow(x, 2) + pow(y, 2)))
+        {
+            maxEl = log(pow(x, 2) + pow(y, 2));
+        }
+        z = maxEl;
+        cout << z;
+
+    }
+    else if (x >= y + 5)
+    {
+        z = a + pow(cos(x - y), 3);
+        cout << z;
+    }
+}
