@@ -1,25 +1,69 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.11.35208.52
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{DD7C0AAF-FF57-4868-BCA8-D36E9FB339D4}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DD7C0AAF-FF57-4868-BCA8-D36E9FB339D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD7C0AAF-FF57-4868-BCA8-D36E9FB339D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD7C0AAF-FF57-4868-BCA8-D36E9FB339D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD7C0AAF-FF57-4868-BCA8-D36E9FB339D4}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {37918B5D-5CC9-4EA4-96F6-59FE069D9B6C}
-	EndGlobalSection
-EndGlobal
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int x;
+            int y;
+            int a;
+            int b;
+            double z;
+
+            Console.WriteLine("Введите x: ");
+            x = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите y: ");
+            y = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите a: ");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите b: ");
+            b = Convert.ToInt32(Console.ReadLine());
+
+            if (x < y)
+            {
+                double minEl = a - Math.Cos(x);
+                if (a / (b + y) < minEl)
+                {
+                    minEl = a / (b + y);
+                }
+                if (Math.Pow(Math.Sin(y), 2) < minEl)
+                {
+                    minEl = Math.Pow(Math.Sin(y), 2);
+                }
+                z = minEl;
+                Console.WriteLine("Результат: ");
+                Console.WriteLine(z);
+            }
+            else if (y <= x && x < y + 5)
+            {
+                double maxEl = Math.Pow(a, 3);
+
+                if (maxEl < Math.Log(Math.Pow(x, 2) + Math.Pow(y, 2)))
+                {
+                    maxEl = Math.Log(Math.Pow(x, 2) + Math.Pow(y, 2));
+                }
+                z = maxEl;
+                Console.WriteLine("Результат: ");
+                Console.WriteLine(z);
+
+            }
+            else if (x >= y + 5)
+            {
+                z = a + Math.Pow(Math.Cos(x - y), 3);
+                Console.WriteLine("Результат: ");
+                Console.WriteLine(z);
+            }
+
+            Console.ReadLine();
+
+
+        }
+    }
+}
